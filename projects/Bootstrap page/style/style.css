@@ -1,0 +1,57 @@
+*{
+    font-family: 'Oswald';
+}
+.navbar{
+    width: 100%;
+}
+.articulo-primero{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/edificio-tarde.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.btn{
+    background-color: #e59057;
+    border-color: #ba784c;
+}
+.btn:hover{
+    background-color: #ba784c;
+    border-color: #e59057;
+}
+.titulo{
+    font-size: 52px;
+}
+
+/* ABOUT */
+
+.cartas{
+    width: 300px;
+    height: 350px;
+    background-color: rgb(151, 151, 151);
+    border-radius: 5px;
+    margin: 20px;
+}
+.cartas i{
+    font-size: 50px;
+    color: #183153;
+}
+.articulito{
+    height: 400px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/edificio-costado.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.contactos{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 35%;
+}
+
+@media (max-width: 900px) {
+    .contactos{
+        width: 70%;
+    }
+}

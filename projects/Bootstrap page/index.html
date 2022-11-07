@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-secondary position-fixed">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.svg" class="imagen-logo" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item px-3">
+                <a class="nav-link text-light" aria-current="page" href="#">HOME</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link text-light" href="#about">ABOUT</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link text-light" href="#contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      
+      <div class="container-fluid articulo-primero d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-light text-center titulo">CONSTRUCTION COMPANY</h1>
+        <p class="text-light text-center">WE ARE THE BEST OPTION</p>
+        <a href="#about"><button type="button" class="btn btn-danger fw-lighter mt-4">KEEP READING</button></a>
+      </div>
+
+      <div class="container d-flex justify-content-center align-items-center flex-wrap contenedor-cartas" id="about">
+        <div class="cartas d-flex justify-content-center align-items-center flex-column">
+            <i class="fa-duotone fa-user-helmet-safety"></i>
+            <h3 class="text-center pt-4 text-light">RELIABLE TEAM</h3>
+            <p class="text-center p-3 text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="cartas d-flex justify-content-center align-items-center flex-column">
+            <i class="fa-duotone fa-wrench"></i>
+            <h3 class="text-center pt-4 text-light">QUALITY WORK</h3>
+            <p class="text-center p-3 text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="cartas d-flex justify-content-center align-items-center flex-column">
+            <i class="fa-duotone fa-triangle-person-digging"></i>
+            <h3 class="text-center pt-4 text-light">ALWAYS PREPARED</h3>
+            <p class="text-center p-3 text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="container-fluid articulito d-flex justify-content-center align-items-center flex-column">
+        <h2 class="text-light">WE CAN HELP YOU</h2>
+        <p class="text-light fw-lighter text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ut!</p>
+        <a href="#contact"><button type="button" class="btn btn-danger fw-lighter mt-2">CONTACT</button></a>
+      </div>
+
+      <div class="container contactos bg-secondary text-light" id="contact">
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

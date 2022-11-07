@@ -1,0 +1,252 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+nav{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("img/pexels-pixabay-220201.jpg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+nav .links{
+    min-height: 6vh;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 41%;
+    
+
+    background-color: rgba(120, 120, 120, 0.5);
+}
+nav .links li{
+    list-style: none;
+}
+
+nav .links li a{
+    text-decoration: none;
+    color: #fff;
+}
+.titulo{
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin-top: 49vh;
+}
+.titulo h1{
+    margin-bottom: 20px;
+    font-size: 47px;
+}
+.titulo h3{
+    font-weight: 400;
+    font-size: 18px;
+}
+.links li a:hover{
+    text-shadow: rgba(255, 255, 255, .7) 1px 1px 10px;
+    transition: text-shadow .3s;
+}
+
+.burger{
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(253, 253, 253);
+    margin: 5px;
+}
+
+@media (max-width: 1000px){
+    body{
+        overflow-x: hidden;
+    }
+    nav .links{
+        float: none;
+        width: 50%;
+        margin-top: 0;
+        overflow-x: hidden;
+
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 0;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 3000;
+    }
+    nav .links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 5000;
+    }
+    .burger div{
+        transition: .5s;
+    }
+}
+
+nav .nav-active{
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translate(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.articulo{
+    width: 100%;
+    height: 100vh;
+    background-image: url("img/art-2.jpg");
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.articulo h1{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+.articulo h5{
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+.articulo p{
+    margin-top: 15px;
+    width: 42%;
+    text-align: center;
+    color: white;
+}
+.articulo button{
+    font-size: 15px;
+    margin-top: 20px;
+    background-color: white;
+    width: 115px;
+    height: 35px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .5s;
+    border: none;
+}
+.articulo button:hover{
+    color: white;
+    background-color: transparent;
+}
+
+@media (max-width: 800px){
+    .articulo p{
+        width: 70%;
+    }
+}
+
+.social{
+    width: 100%;
+    height: 100vh;
+    background-image: url("img/astronautas-luna_0.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.social h2{
+    width: 90%;
+    color: #eee;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+.social-containers{
+    width: 190px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social ul div i{
+    margin: 0 20px;
+}
+.follow{
+    color: #eee;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    cursor: pointer;
+}
+.fa-instagram{
+    background-color: #E1306C;
+}
+.fa-instagram:hover{
+    background-color: #f5578c;
+}
+.fa-facebook{
+    background-color: #3b5998;
+}
+.fa-facebook:hover{
+    background-color: #5880d6;
+}
+.fa-twitter{
+    background-color: #00acee;
+}
+.fa-twitter:hover{
+    background-color: #30bbf1;
+}
+.fa-whatsapp{
+    background-color: #25D366;
+}
+.fa-whatsapp:hover{
+    background-color: #40f582;
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+}
