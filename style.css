@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+body section{
+    width: 50%;
+}
+body section h2{
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* productos */
+#productos{
+    width: 100%;
+    height: 600px;
+    background-color: blue;
+    display: flex;
+    gap: 20px;
+}
+.producto{
+    width: 200px;
+    height: 300px;
+    background-color: red;
+    position: relative;
+    margin: 10px;
+}
+.producto img{
+    width: 200px;
+    height: 255px;
+    object-fit: cover;
+}
+.producto input{
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+}
+.producto button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+}
+.producto p{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgb(38, 240, 68);
+}
+
+/* carrito */
+#carrito{
+    width: 100%;
+    height: 600px;
+    background-color: blueviolet;
+    display: flex;
+    gap: 20px;
+}
