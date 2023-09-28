@@ -12,9 +12,6 @@ document.addEventListener("DOMContentLoaded", ()=>{ // cuando todo el DOM haya c
         const agregarBtn = producto.querySelector(".agregar"); // asignamos el agregarBoton del carrito
         agregarBtn.addEventListener("click", ()=>{ // y le damos un event listener
 
-          /* const productoExistente = carrito.querySelector(`[data-id="${producto.dataset.id}"]`);
-          if(productoExistente) return; */
-
           // mio
           let carrito1 = carrito.querySelector("#producto1"); // si el producto1 esta en el carrito
           if(producto.contains(document.getElementById("producto1")) && carrito1) return;
