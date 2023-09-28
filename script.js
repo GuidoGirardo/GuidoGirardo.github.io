@@ -2,15 +2,24 @@ document.addEventListener("DOMContentLoaded", ()=>{ // cuando todo el DOM haya c
 
     const productos = document.querySelectorAll(".producto"); // el producto individual
     const carrito = document.getElementById("carrito"); // el div carrito de la segunda section
+    let totalTotal = document.getElementById("totalTotal"); // h4 totalTotal txt
+    let plataTotal = 0;
+
+    if(totalTotal.textContent == "0") carrito.style.display = "none";
   
     // event listener para agregar productos al carrito
     productos.forEach((producto)=>{
         const agregarBtn = producto.querySelector(".agregar"); // asignamos el agregarBoton del carrito
         agregarBtn.addEventListener("click", ()=>{ // y le damos un event listener
 
-            // chequeamos que no haya items repetidos
-            const productoExistente = carrito.querySelector(`[data-id="${producto.dataset.id}"]`);
-            if(productoExistente) return;
+          /* const productoExistente = carrito.querySelector(`[data-id="${producto.dataset.id}"]`);
+          if(productoExistente) return; */
+
+          // mio
+          let carrito1 = carrito.querySelector("#producto1"); // si el producto1 esta en el carrito
+          if(producto.contains(document.getElementById("producto1")) && carrito1) return;
+          let carrito2 = carrito.querySelector("#producto2"); // si el producto1 esta en el carrito
+          if(producto.contains(document.getElementById("producto2")) && carrito2) return;
 
             const productoClonado = producto.cloneNode(true); // clonamos literalmente el producto
             const cantidad = productoClonado.querySelector("input").value; // le sacamos la cantidad del input
@@ -20,15 +29,27 @@ document.addEventListener("DOMContentLoaded", ()=>{ // cuando todo el DOM haya c
             agregarAlCarrito(productoClonado, cantidad); // llamamos a la función agregarAlCarrito();
 
             // 100% argentino
-            let amountPaypal = document.getElementById("amountPaypal");
+            const amountPaypal = document.getElementById("amountPaypal");
             let valor = cantidad * producto.querySelector("p").textContent.replace("$", "");
-            amountPaypal.value = valor.toString();  
+            plataTotal += valor;
+            amountPaypal.value = plataTotal.toString();
+            totalTotal.textContent = `Total: $${plataTotal}`;
+            if(totalTotal.textContent != "0") carrito.style.display = "flex";
+            console.log(plataTotal);
       });
     });
   
     // event listener para eliminar productos del carrito
     carrito.addEventListener("click", (event)=>{
-      if(event.target.classList.contains("eliminar")) event.target.parentElement.remove();
+      if(event.target.classList.contains("eliminar")) {
+        event.target.parentElement.remove();
+        let valorRestar = event.target.parentElement.querySelector("p").textContent.replace("$", "");
+        plataTotal -= parseInt(valorRestar);
+        amountPaypal.value = plataTotal.toString();
+        totalTotal.textContent = `Total: $${plataTotal}`;
+        if(totalTotal.textContent == "Total: $0") carrito.style.display = "none";
+        console.log(plataTotal);
+      }
     });
   
     // FUNCIÓN para agregar producto al carrito

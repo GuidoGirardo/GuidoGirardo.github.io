@@ -11,9 +11,16 @@
     <section>
         <h2>PRODUCTOS</h2>
         <div id="productos">
-            <div class="producto">
+            <div class="producto" id="producto1">
+                <img src="https://www.semana.com/resizer/5caYYrvQOnEJQSMRf8XmN7hlVbo=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/3LN67ZZCTVBDPC2P5ZGQZGJ4ZA.jpg" alt="">
+                <p>$10</p>
+                <input type="number" value="1" min="1">
+                <button class="agregar">Agregar Carrito</button>
+            </div>
+
+            <div class="producto" id="producto2">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/NIG-ARG_%285%29.jpg" alt="">
-                <p>$69</p>
+                <p>$20</p>
                 <input type="number" value="1" min="1">
                 <button class="agregar">Agregar Carrito</button>
             </div>
@@ -27,11 +34,13 @@
                 <input type="hidden" name="cmd" value="_xclick">
                 <input type="hidden" name="business" value="guidogirardo@gmail.com">
                 <input type="hidden" name="item_name" value="Nombre del producto">
-                <input type="hidden" name="amount" value="" id="amountPaypal">
+                <input type="hidden" name="amount" value="0" id="amountPaypal">
                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Pagar con PayPal">
               </form>
         </div>
     </section>
+
+    <h4 id="totalTotal">0</h4>
 
     <script src="script.js"></script>
 </body>
