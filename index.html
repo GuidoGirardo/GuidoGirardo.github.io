@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Apps</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <h1>Dark Apps</h1>
+    <div id="divBtnDescargar">
+        <button id="btnDescargar" onclick="descargarAPK()">download</button>
+    </div>
+    <div id="container">
+        <div>
+            <img src="./darkapps.jpg" alt="dark apps logo">
+            <p>+ free</p>
+            <p>+ without delays</p>
+            <p>+ 0 testers</p>
+            <p>+ no content restrictions</p>
+        </div>
+        <div>vs</div>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Play_Arrow_logo.svg/1200px-Google_Play_Arrow_logo.svg.png" alt="playstore logo">
+            <p>- $25</p>
+            <p>- two weeks delay</p>
+            <p>- 20 testers</p>
+            <p>- content restrictions</p>
+        </div>
+    </div>
+    <div id="divBtnDescargar">
+        <button id="btnDescargar" onclick="descargarAPK()">download</button>
+    </div>
+    
+    <script>
+        function descargarAPK() {
+          var nombreArchivo = 'app.apk';
+          var rutaAPK = './app.apk';
+
+          var linkDescarga = document.createElement('a');
+          linkDescarga.href = rutaAPK;
+          linkDescarga.download = nombreArchivo;
+
+          document.body.appendChild(linkDescarga);
+          linkDescarga.click();
+
+          document.body.removeChild(linkDescarga);
+        }
+      </script>
+</body>
+</html>
