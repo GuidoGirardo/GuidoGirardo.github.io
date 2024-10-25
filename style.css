@@ -1,0 +1,100 @@
+/* General settings */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Banner del header */
+.banner {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 15px;
+}
+
+.banner h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 0.9em;
+    margin: 5px 0 0 0;
+}
+
+/* Carrusel (filtros) */
+#filtros {
+    padding: 10px;
+}
+
+.carrusel {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.carrusel-item {
+    min-width: 100px;
+    padding: 10px;
+    margin-right: 5px;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.carrusel-item.seleccionado {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+/* Estilo para las ofertas */
+#ofertas{
+    padding: 0 10px;
+}
+#ofertas h2{
+    margin-top: 20px;
+    text-align: center;
+}
+.oferta {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* La imagen ocupará 1/5 del ancho total */
+.oferta img {
+    width: 20%; /* 1/5 del ancho total */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo para el contenedor de texto */
+.oferta-contenido {
+    flex-grow: 1; /* Toma el resto del espacio */
+}
+
+/* Títulos y párrafos dentro de la oferta */
+.oferta h3 {
+    font-size: 1em;
+    margin: 0 0 5px 0;
+}
+
+.oferta p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
