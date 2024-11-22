@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Dager</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/eb65c1a237.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <audio id="audio" src="./rock.mp3" preload="auto"></audio>
+    <button id="volume"><i class="fa-solid fa-volume-high"></i></button>
+    <audio id="sorpresa" src="./Sonido de sorpresa.mp3"></audio>
+    <div id="dotdager">
+        <img id="dotdagerImg" src="./dotdager.jpg">
+        <h1 id="text">Dot Dager</h1>
+    </div>
+
+    <div id="sobremi">
+        <h2>Algunas cosas sobre mí:</h2>
+        <div class="cartas">
+            <div class="carta">
+                <video src="./programo.mp4"></video>
+                <h3>Programo y gano una banda de guita, no como los nómadas urbanos</h3> <!-- Título debajo del video -->
+                <p class="fin-texto">C++ es mi lenguaje favorito</p>
+            </div>
+            <div class="carta">
+                <video src="./filosofia.mp4"></video>
+                <h3>Me gusta la filosofía (no encontré ningún video)</h3> <!-- Título debajo del video -->
+                <p class="fin-texto">Me gusta el arte</p>
+            </div>
+            <div class="carta">
+                <video src="./guitarra.mp4"></video>
+                <h3>Me gustan las guitarras soy re capo</h3> <!-- Título debajo del video -->
+                <p class="fin-texto">A esta altura estoy re quemado ni idea qué poner</p>
+            </div>
+            <div class="carta">
+                <video src="./programo2.mp4"></video>
+                <h3>Con una licuadora te hago un server papá</h3> <!-- Título debajo del video -->
+                <p class="fin-texto">Y con un server te hago una licuadora</p>
+            </div>
+            <div class="carta">
+                <video src="./gato.mp4"></video>
+                <h3>Gatitos</h3> <!-- Título debajo del video -->
+                <p class="fin-texto">jiji me gustan los gatos</p>
+            </div>
+            <div class="carta">
+                <video src="./guitarra2.mp4"></video>
+                <h3>¿Ya te dije que toco la guitarra?</h3> <!-- Título debajo del video -->
+                <p class="fin-texto">Tengo una banda y somos todos re capos</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="textoFinal" style="display: none; text-align: center; font-size: 20px;">
+        Gracias por ver, tomátela dale ya me conociste :)
+    </div>
+    
+
+    <script src="audio.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const textElement = document.getElementById('text');
+            const dotdagerDiv = document.getElementById('dotdager');
+            const sobremiDiv = document.getElementById('sobremi');
+            const volumenIcon = document.querySelector("#volume i");
+            const sorpresa = document.getElementById("sorpresa");
+
+             const names = ["Dot Dager", "god dager", "skrillex", "el extraño de pelo largo", "el de los chistes de pitos", "el que viste camisaki", "el que está moviendo el mouse ahora", "el que ladra no muerde", "mi gisti li filisifii", "re larga la hacía", "che vamos cortando...", "¿querés que nos caguemos a trompadas?", "¿no? ok, está todo bien entonces", "estoy secuestrado en algún lugar del alto Perú", "ayuda por favor", "si me ven escribiendo esto me van a smd1s84dd|1||d"];
+            let currentIndex = 0;
+            let hasPlayedSorpresa = false; 
+
+            // Función para cambiar el texto
+            function changeText() {
+                textElement.classList.add('fadeOut'); // Inicia el desvanecimiento
+
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % names.length; // Cambia al siguiente nombre en el array
+                    textElement.textContent = names[currentIndex]; // Actualiza el contenido del texto
+                    
+                    if (currentIndex === names.length - 1) {
+                        setTimeout(() => {
+                            dotdagerDiv.style.display = 'none';
+                            sobremiDiv.style.display = 'flex';
+                            setTimeout(() => {
+                                sobremiDiv.style.opacity = '1';
+                            }, 10);
+                            audio.volume = 0;
+                            volumenIcon.style.display = "none";
+                            if (!hasPlayedSorpresa) {
+                                sorpresa.volume = 0.1;
+                                sorpresa.play();
+                                hasPlayedSorpresa = true;
+                            }
+                        }, 3000);
+                    }
+
+                    textElement.classList.remove('fadeOut');
+                    textElement.offsetHeight;
+                    textElement.classList.add('fadeIn');
+    
+                    setTimeout(() => {
+                        textElement.classList.remove('fadeIn');
+                    }, 1000);
+                }, 1000);
+            }
+
+            setInterval(changeText, 3000);
+        });
+
+        window.addEventListener('load', () => {
+            const videos = document.querySelectorAll('video');
+            let completedVideos = 0; // Contador de videos completados
+
+            videos.forEach((video) => {
+                const carta = video.closest('.carta');
+                const textoFin = carta.querySelector('.fin-texto');
+                const h3 = carta.querySelector('h3');
+
+                video.addEventListener('ended', () => {
+                    video.style.display = 'none'; // Ocultamos el video
+                    h3.style.display = 'none'; // Ocultamos el título h3
+                    textoFin.style.display = 'block'; // Mostramos el texto
+                    carta.style.display = "flex";
+                    carta.style.justifyContent = "center";
+                    carta.style.alignItems = "center";
+
+                    completedVideos++; // Incrementamos el contador de videos completados
+
+                    // Verificamos si todos los videos han sido vistos
+                    if (completedVideos === videos.length) {
+                        const textoFinal = document.getElementById('textoFinal');
+                        textoFinal.style.display = 'block'; // Mostramos el texto final
+                    }
+                });
+
+                video.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        video.volume = 0.1;
+                    } else {
+                        video.pause();
+                    }
+                });
+            });
+        });
+    </script>    
+
+</body>
+</html>
