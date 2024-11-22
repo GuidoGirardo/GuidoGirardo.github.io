@@ -11,6 +11,7 @@
     <audio id="audio" src="./rock.mp3" preload="auto"></audio>
     <button id="volume"><i class="fa-solid fa-volume-high"></i></button>
     <audio id="sorpresa" src="./Sonido de sorpresa.mp3"></audio>
+    <button id="startButton">Iniciar Experiencia</button>
     <div id="dotdager">
         <img id="dotdagerImg" src="./dotdager.jpg">
         <h1 id="text">Dot Dager</h1>
@@ -60,15 +61,17 @@
     <script src="audio.js"></script>
     <script>
         window.addEventListener('load', () => {
+            const startButton = document.getElementById('startButton');
             const textElement = document.getElementById('text');
             const dotdagerDiv = document.getElementById('dotdager');
             const sobremiDiv = document.getElementById('sobremi');
             const volumenIcon = document.querySelector("#volume i");
             const sorpresa = document.getElementById("sorpresa");
 
-             const names = ["Dot Dager", "god dager", "skrillex", "el extraño de pelo largo", "el de los chistes de pitos", "el que viste camisaki", "el que está moviendo el mouse ahora", "el que ladra no muerde", "mi gisti li filisifii", "re larga la hacía", "che vamos cortando...", "¿querés que nos caguemos a trompadas?", "¿no? ok, está todo bien entonces", "estoy secuestrado en algún lugar del alto Perú", "ayuda por favor", "si me ven escribiendo esto me van a smd1s84dd|1||d"];
+            /* const names = ["Dot Dager", "god dager", "skrillex", "el extraño de pelo largo", "el de los chistes de pitos", "el que viste camisaki", "el que está moviendo el mouse ahora", "el que ladra no muerde", "mi gisti li filisifii", "re larga la hacía", "che vamos cortando...", "¿querés que nos caguemos a trompadas?", "¿no? ok, está todo bien entonces", "estoy secuestrado en algún lugar del alto Perú", "ayuda por favor", "si me ven escribiendo esto me van a smd1s84dd|1||d"]; */
+            const names = ["hola"];
             let currentIndex = 0;
-            let hasPlayedSorpresa = false; 
+            let hasPlayedSorpresa = false;
 
             // Función para cambiar el texto
             function changeText() {
@@ -77,7 +80,7 @@
                 setTimeout(() => {
                     currentIndex = (currentIndex + 1) % names.length; // Cambia al siguiente nombre en el array
                     textElement.textContent = names[currentIndex]; // Actualiza el contenido del texto
-                    
+
                     if (currentIndex === names.length - 1) {
                         setTimeout(() => {
                             dotdagerDiv.style.display = 'none';
@@ -98,14 +101,20 @@
                     textElement.classList.remove('fadeOut');
                     textElement.offsetHeight;
                     textElement.classList.add('fadeIn');
-    
+
                     setTimeout(() => {
                         textElement.classList.remove('fadeIn');
                     }, 1000);
                 }, 1000);
             }
 
-            setInterval(changeText, 3000);
+            // Mostrar la experiencia cuando el usuario hace clic en el botón
+            startButton.addEventListener('click', () => {
+                startButton.style.display = 'none'; // Ocultar el botón
+                audio.volume = 0.1; // Activar el audio
+                audio.play(); // Reproducir el audio
+                setInterval(changeText, 3000); // Iniciar la animación de cambio de texto
+            });
         });
 
         window.addEventListener('load', () => {
@@ -136,8 +145,8 @@
 
                 video.addEventListener('click', () => {
                     if (video.paused) {
-                        video.play();
                         video.volume = 0.1;
+                        video.play();
                     } else {
                         video.pause();
                     }

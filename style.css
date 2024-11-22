@@ -28,6 +28,40 @@ h1{
     opacity: 1;
     transition: opacity 1s ease-in-out;
 }
+#startButton {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    z-index: 3000;
+    top: 0;
+    bottom: -400px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white; /* Texto blanco para resaltar sobre el fondo */
+    font-size: 20px; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    padding: 12px 30px; /* Relleno interior para hacerlo más grande */
+    background-color: #8417b3; /* Color morado de fondo */
+    border: 2px solid #8417b3; /* Borde del mismo color morado */
+    border-radius: 25px; /* Bordes redondeados */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+    transition: all 0.3s ease; /* Suaviza la transición para los efectos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar un efecto de profundidad */
+}
+
+#startButton:hover {
+    background-color: #7a13a4; /* Fondo morado más oscuro cuando se pasa el cursor */
+    border-color: #7a13a4; /* Cambiar el borde a color más oscuro */
+    transform: scale(1.1); /* Aumentar un poco el tamaño al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al pasar el cursor */
+}
+
+#startButton:active {
+    transform: scale(1); /* Vuelve al tamaño original al hacer clic */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Vuelve la sombra a su estado inicial */
+}
 #volume{
     width: 40px;
     height: 40px;
